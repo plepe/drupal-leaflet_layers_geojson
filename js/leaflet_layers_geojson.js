@@ -17,7 +17,7 @@ Drupal.Leaflet.prototype.create_layer = function(layer, key) {
           return JSON.parse(style)
         }
         catch (e) {
-          console.error(e)
+          console.error('Can\'t render style', e, style)
           return {}
         }
       }
