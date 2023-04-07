@@ -23,9 +23,11 @@ Drupal.Leaflet.prototype.create_layer = function(layer, key) {
       }
     }
 
-    fetch(layer.options.file)
-      .then(req => req.json())
-      .then(json => map_layer.addData(json))
+    map_layer.once('add', () => {
+      fetch(layer.options.file)
+        .then(req => req.json())
+        .then(json => map_layer.addData(json))
+    })
 
     return map_layer
   } else {
