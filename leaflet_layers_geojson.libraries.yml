@@ -4,3 +4,4 @@ general:
     js/leaflet_layers_geojson.js: {}
   dependencies:
     - leaflet/leaflet-drupal
+    - twigjs/twigjs

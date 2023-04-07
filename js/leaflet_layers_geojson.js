@@ -6,9 +6,15 @@ Drupal.Leaflet.prototype.create_layer = function(layer, key) {
     const map_layer = new L.geoJSON({type: 'FeatureCollection', features: []})
 
     if (layer.options.style) {
+      const template = Twig.twig({
+        data: layer.options.style
+      })
+
       map_layer.options.style = (item) => {
+        const style = template.render({ item })
+
         try {
-          return JSON.parse(layer.options.style)
+          return JSON.parse(style)
         }
         catch (e) {
           console.error(e)

@@ -54,7 +54,7 @@ class GeoJSON extends LayerTypePluginBase implements LayerTypeInterface {
         'style' => [
           '#type' => 'textarea',
           '#title' => t('Style'),
-          '#description' => t("A JSON structure for the style of each item. Example: <tt>{ &quot;color&quot: &quot;blue&quot; }</tt>."),
+          '#description' => t("This is a TwigJS template, which evaluates to a JSON structure for the style of each item. You can use <tt>{{ item.properties.value_name }}</tt> to get the value of a property of the item. Example: <tt>{ &quot;color&quot: &quot;{{ item.properties.color }}&quot; }</tt>."),
           '#default_value' => '',
           '#maxlength' => 65535,
         ],
