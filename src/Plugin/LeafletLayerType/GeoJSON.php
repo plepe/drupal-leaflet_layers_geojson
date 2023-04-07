@@ -51,6 +51,13 @@ class GeoJSON extends LayerTypePluginBase implements LayerTypeInterface {
           '#default_value' => 1,
           '#step' => 0.1,
         ],
+        'style' => [
+          '#type' => 'textarea',
+          '#title' => t('Style'),
+          '#description' => t("A JSON structure for the style of each item. Example: <tt>{ &quot;color&quot: &quot;blue&quot; }</tt>."),
+          '#default_value' => '',
+          '#maxlength' => 65535,
+        ],
       ],
     ];
   }
