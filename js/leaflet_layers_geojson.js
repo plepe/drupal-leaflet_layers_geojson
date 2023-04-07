@@ -23,6 +23,12 @@ Drupal.Leaflet.prototype.create_layer = function(layer, key) {
       }
     }
 
+    if (layer.options.popup) {
+      const template = Twig.twig({ data: layer.options.popup })
+
+      map_layer.bindPopup((l) => template.render({ item: l.feature }))
+    }
+
     map_layer.once('add', () => {
       fetch(layer.options.file)
         .then(req => req.json())

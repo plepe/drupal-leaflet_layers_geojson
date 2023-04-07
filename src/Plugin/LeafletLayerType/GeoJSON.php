@@ -58,6 +58,13 @@ class GeoJSON extends LayerTypePluginBase implements LayerTypeInterface {
           '#default_value' => '',
           '#maxlength' => 65535,
         ],
+        'popup' => [
+          '#type' => 'textarea',
+          '#title' => t('Popup'),
+          '#description' => t("This is a TwigJS template, which returns HTML. You can use <tt>{{ item.properties.value_name }}</tt> to get the value of a property of the item."),
+          '#default_value' => '',
+          '#maxlength' => 65535,
+        ],
       ],
     ];
   }
