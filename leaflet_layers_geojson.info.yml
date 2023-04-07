@@ -1,0 +1,7 @@
+name: Leaflet Layers GeoJSON
+description: Add GeoJSON files as map layers to Leaflet Layers
+package: Leaflet
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - leaflet_layers

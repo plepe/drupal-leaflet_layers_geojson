@@ -1,0 +1,5 @@
+<?php
+function leaflet_layers_geojson_element_info_alter(array &$types) {
+  file_put_contents('tmp/x', json_encode($types,  JSON_PRETTY_PRINT), FILE_APPEND);
+  $types['html']['#attached']['library'][] = 'leaflet_layers_geojson/general';
+}

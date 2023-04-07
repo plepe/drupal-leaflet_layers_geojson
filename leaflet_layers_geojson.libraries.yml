@@ -1,0 +1,6 @@
+general:
+  version: 1.x
+  js:
+    js/leaflet_layers_geojson.js: {}
+  dependencies:
+    - leaflet/leaflet-drupal
